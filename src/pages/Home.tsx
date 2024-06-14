@@ -3,7 +3,7 @@ import Map from '../components/Map';
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className='relative h-screen'>
       <Map />
     </div>
   );
