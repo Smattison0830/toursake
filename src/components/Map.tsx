@@ -15,7 +15,6 @@ const Map: React.FC = () => {
         center: [139, 38], // starting position [lng, lat]
         zoom: 4.5 // starting zoom
       });
-      console.log(map)
       return () => map.remove();
     }
   }, []);
