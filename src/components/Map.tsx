@@ -12,10 +12,10 @@ const Map: React.FC = () => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/streets-v11',
-        center: [-74.5, 40], // starting position [lng, lat]
-        zoom: 9 // starting zoom
+        center: [139, 38], // starting position [lng, lat]
+        zoom: 4.5 // starting zoom
       });
-
+      console.log(map)
       return () => map.remove();
     }
   }, []);
