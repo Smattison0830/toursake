@@ -2,16 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.map-container {
-    /* Ensures the map is behind the navbar */
+.mapboxgl-canvas {
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
-    z-index: 0;
-  }
-
-.navbar-container {
-    z-index: 10;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
