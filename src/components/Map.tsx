@@ -14,7 +14,7 @@ const Map: React.FC = () => {
       if (mapContainer.current) {
         const mapInstance = new mapboxgl.Map({
           container: mapContainer.current,
-          style: 'mapbox://styles/mapbox/streets-v11',
+          style: 'mapbox://styles/mapbox/light-v11',
           center: [139, 40],
           zoom: 4,
         });
@@ -23,11 +23,19 @@ const Map: React.FC = () => {
 
         const fetchedLocations = await getLocations();
 
-        fetchedLocations.forEach((location: { latitude: number, longitude: number, name: string }) => {
-          new mapboxgl.Marker()
-            .setLngLat([location.longitude, location.latitude])
-            .setPopup(new mapboxgl.Popup().setHTML(`<h3>${location.name}</h3>`))
-            .addTo(mapInstance);
+        fetchedLocations.forEach((location: { latitude: number, longitude: number, name: string, type: string }) => {
+            const el = document.createElement('div');
+            if (location.type === "whiskey") {
+                el.className = 'whiskey';
+            } else if (location.type === "beer") {
+                el.className = 'beer'
+            } else {
+                el.className = 'sake'
+            }
+            new mapboxgl.Marker(el)
+                .setLngLat([location.longitude, location.latitude])
+                .setPopup(new mapboxgl.Popup().setHTML(`<h3>${location.name}</h3>`))
+                .addTo(mapInstance);
         });
       }
     };

@@ -5,14 +5,13 @@ interface Location {
   latitude: number;
   longitude: number;
   name: string;
+  type: string
 }
 
 export const getLocations = async (): Promise<Location[]> => {
   try {
     const locationsRef = ref(database, 'locations');
-    console.log(locationsRef)
     const snapshot = await get(locationsRef);
-    console.log(snapshot)
     if (!snapshot.exists()) {
       console.log('No data available');
       return [];
@@ -23,6 +22,7 @@ export const getLocations = async (): Promise<Location[]> => {
       latitude: data[key].latitude,
       longitude: data[key].longitude,
       name: data[key].name,
+      type: data[key].type,
     }));
 
     console.log('Locations array:', locations); // Debugging log
