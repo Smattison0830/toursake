@@ -24,7 +24,6 @@ export const getLocations = async (): Promise<Location[]> => {
       name: data[key].name,
       type: data[key].type,
     }));
-
     console.log('Locations array:', locations); // Debugging log
     return locations;
   } catch (error) {
