@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import About from './pages/About';
+import Locations from './pages/Locations';
 import Contact from './pages/Contact';
 import Map from './components/Map';
 
@@ -17,7 +17,7 @@ const App: React.FC = () => {
           <div className="flex-1">
             <Routes>
               <Route path="/" element={<Map selectedType={selectedType} />} />
-              <Route path="/about" element={<About />} />
+              <Route path="/locations" element={<Locations />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
