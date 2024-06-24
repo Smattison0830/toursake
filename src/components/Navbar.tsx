@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
           </div>
           <div className="flex space-x-4">
             <Link to="/" className="text-white px-3 py-2 rounded-md text-sm font-medium">Map</Link>
-            <Link to="/locations" className="text-white px-3 py-2 rounded-md text-sm font-medium">About</Link>
+            <Link to="/locations" className="text-white px-3 py-2 rounded-md text-sm font-medium">Locations</Link>
             <Link to="/contact" className="text-white px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
           </div>
         </div>
