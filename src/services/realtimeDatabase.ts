@@ -5,7 +5,7 @@ interface Location {
   latitude: number;
   longitude: number;
   name: string;
-  type: string
+  type: string;
 }
 
 export const getLocations = async (): Promise<Location[]> => {
