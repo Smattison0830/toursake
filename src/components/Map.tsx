@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import mapboxgl from 'mapbox-gl';
 import { getLocations } from '../services/realtimeDatabase';
 import LocationMapPopup from '../components/LocationMapPopup';
@@ -49,7 +49,8 @@ const Map: React.FC<MapProps> = ({ selectedType }) => {
             el.className = 'sake'
           }
           const popupEl = document.createElement('div');
-          ReactDOM.render(<LocationMapPopup name={location.name} />, popupEl);
+          const root = createRoot(popupEl);
+          root.render(<LocationMapPopup name={location.name} />);
 
           const marker = new mapboxgl.Marker(el)
             .setLngLat([location.longitude, location.latitude])
