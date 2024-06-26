@@ -10,7 +10,7 @@ const App: React.FC = () => {
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const location = useLocation(); // Use location to determine the current route
 
-  // Determine if the current route is '/locations'
+  // Determine if the current route is '/'
   const isMapRoute = location.pathname === '/';
 
   return (
