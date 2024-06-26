@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react';
+import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
 import { getLocations } from '../services/realtimeDatabase';
+import LocationPopup from '../components/LocationPopup';
 
 const apiKey = import.meta.env.VITE_MAPBOX_KEY as string;
 mapboxgl.accessToken = apiKey
@@ -19,8 +21,8 @@ const Map: React.FC<MapProps> = ({ selectedType }) => {
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
         style: 'mapbox://styles/mapbox/light-v11',
-        center: [139, 40],
-        zoom: 4,
+        center: [139, 37],
+        zoom: 4.5,
       });
 
       return () => map.current?.remove();
@@ -46,9 +48,12 @@ const Map: React.FC<MapProps> = ({ selectedType }) => {
           } else {
             el.className = 'sake'
           }
+          const popupEl = document.createElement('div');
+          ReactDOM.render(<LocationPopup name={location.name} />, popupEl);
+
           const marker = new mapboxgl.Marker(el)
             .setLngLat([location.longitude, location.latitude])
-            .setPopup(new mapboxgl.Popup().setHTML(`<h3>${location.name}</h3>`))
+            .setPopup(new mapboxgl.Popup().setDOMContent(popupEl))
             .addTo(map.current!);
           markers.current.push(marker);
         });
