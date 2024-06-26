@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl';
 import { getLocations } from '../services/realtimeDatabase';
-import LocationPopup from '../components/LocationPopup';
+import LocationMapPopup from '../components/LocationMapPopup';
 
 const apiKey = import.meta.env.VITE_MAPBOX_KEY as string;
 mapboxgl.accessToken = apiKey
@@ -49,7 +49,7 @@ const Map: React.FC<MapProps> = ({ selectedType }) => {
             el.className = 'sake'
           }
           const popupEl = document.createElement('div');
-          ReactDOM.render(<LocationPopup name={location.name} />, popupEl);
+          ReactDOM.render(<LocationMapPopup name={location.name} />, popupEl);
 
           const marker = new mapboxgl.Marker(el)
             .setLngLat([location.longitude, location.latitude])

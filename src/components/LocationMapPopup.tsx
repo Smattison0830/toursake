@@ -1,10 +1,10 @@
 import React from 'react';
 
-interface LocationPopup {
+interface LocationMapPopup {
   name: string;
 }
 
-const LocationPopup: React.FC<LocationPopup> = ({ name }) => {
+const LocationMapPopup: React.FC<LocationMapPopup> = ({ name }) => {
   return (
     <div className="popup-content">
       <h3>{name}</h3>
@@ -14,4 +14,4 @@ const LocationPopup: React.FC<LocationPopup> = ({ name }) => {
   );
 };
 
-export default LocationPopup;
+export default LocationMapPopup;
