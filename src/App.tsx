@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Locations from './pages/Locations';
-import Contact from './pages/Contact';
+import About from './pages/About';
 import Map from './components/Map';
 
 const App: React.FC = () => {
@@ -23,7 +23,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Map selectedType={selectedType} />} />
             <Route path="/locations" element={<Locations />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
       </div>
