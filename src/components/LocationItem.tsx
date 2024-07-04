@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface LocationItem {
-  key: number;
+  key: string;
   name: string;
   address: string;
   type: string;
