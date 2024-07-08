@@ -41,7 +41,7 @@ export const getLocations = async (): Promise<Location[]> => {
       reservation: data[key].reservation,
     }));
     console.log('Locations array:', locations); // Debugging log
-    return locations;
+    return locations
   } catch (error) {
     console.error('Error fetching data: ', error);
     return [];

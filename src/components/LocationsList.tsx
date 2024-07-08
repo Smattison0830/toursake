@@ -36,12 +36,10 @@ const LocationsList: React.FC = () => {
     <div className="text-center text-3xl">
       <h1>Locations Page</h1>
       <ul>
-      {locations.map((location, index) => {
-        const key = location.id; // You can modify this if you need to create a more complex key
-        console.log('Key:', key); // Log each key to the console
+      {locations.map((location) => {
         return (
           <LocationItem
-            key={key}
+            key={location.id}
             name={location.name}
             address={location.address}
             city={location.city}

@@ -12,8 +12,15 @@
 }
 
 .mapboxgl-popup-content {
-  background: #666 !important;
-  opacity: 90% !important;
+  background-color: rgba(249, 115, 22, .5) !important;
+}
+
+.mapboxgl-popup-tip {
+  border-top-color: rgba(249, 115, 22, .5) !important
+}
+
+.mapbox-popup-anchor-bottom {
+  background-color: red !important;
 }
 
 .whiskey {

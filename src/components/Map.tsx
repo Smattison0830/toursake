@@ -50,7 +50,7 @@ const Map: React.FC<MapProps> = ({ selectedType }) => {
           }
           const popupEl = document.createElement('div');
           const root = createRoot(popupEl);
-          root.render(<LocationMapPopup name={location.name} />);
+          root.render(<LocationMapPopup name={location.name} city={location.city} address={location.address} />);
 
           const marker = new mapboxgl.Marker(el)
             .setLngLat([location.longitude, location.latitude])
